@@ -90,7 +90,9 @@ First, create an external metric in Genesys Cloud.
 
 1. Go to **Admin > Performance & Engagement > External Metric Definitions**
 2. Enter the following details for the External Metric
-![External Metric Configuration](./images/new_external_metric.png "External Metric Configuration")
+
+    ![External Metric Configuration](./images/new_external_metric.png "External Metric Configuration")
+
 3. Save and Activate the Metric
 4. Take note of the **External ID** which will be used later in the Salesforce configuration.
 
@@ -227,6 +229,10 @@ Using Flow Builder, create a flow that will automatically run every time an SFDC
     | Genesys Cloud User ID | {!$Record.Owner:User.Genesys_Cloud_User_Id__c}            |
     | Metric ID             | *(Insert the Metric ID of the previously created metric)* |
     | SFDC User ID          | {!$Record.OwnerId}                                        |
+
+The flow should look something like this:
+
+![Flow overview](./images/flow_overview.png "Flow overview")
 
 5. Save and Activate the Flow.
 
