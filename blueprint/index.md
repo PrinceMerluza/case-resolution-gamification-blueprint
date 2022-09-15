@@ -38,6 +38,7 @@ The concept can similarly be used with any metric or with any 3rd-party system b
 ### Genesys Cloud account requirements
 
 * A Genesys Cloud license. For more information, see [Genesys Cloud Pricing](https://www.genesys.com/pricing "Opens the Genesys Cloud pricing page").
+* [Genesys Cloud 3 license](https://www.genesys.com/pricing "Genesys Cloud 3 license") or [Genesys Cloud User 1 WEM Upgrade II](https://appfoundry.genesys.com/filter/genesyscloud/listing/814c259b-7e36-48e6-b6d2-5355b4146227 "Genesys Cloud User 1 WEM Upgrade II") or [Genesys Cloud User 2 WEM Upgrade I](https://appfoundry.genesys.com/filter/genesyscloud/listing/253f2cbb-5f9d-4349-a54e-1e8dd4a0f8a5 "Genesys Cloud User 2 WEM Upgrade I")
 * Master Admin role in Genesys Cloud. For more information, see [Roles and permissions overview](https://help.mypurecloud.com/?p=24360 "Opens the Roles and permissions overview article") in the Genesys Cloud Resource Center.
 * An OAuth client with roles that are assigned the Gamification permissions. For more information, see [OAuth client permissions for Genesys Cloud for Salesforce](https://help.mypurecloud.com/?p=188903 "Opens the Genesys Cloud for Salesforce page") and [Create an OAuth client](https://help.mypurecloud.com/?p=188023 "Opens the resource page for creating an OAuth Client") in the Genesys Cloud Resource Center.
 
@@ -68,7 +69,7 @@ Sample Body:
 
 * `items` is an array containing update to a specific metric for a specific user. Multiple items in the array should be added for updating multiple metrics or multiple users.
 
-* `dateOccurred` is the date of recording the specific metric value. You may set this to any date in the past but it will override any values that were already set. At the time of writing, invoking the API with the same date will override the `value` and `count` properties. Since the `value` will not automatically accumulate, it's expected that the data are pre-aggregated and finalized in the external system every time the API is called.
+* `dateOccurred` is the date of recording the specific metric value. You may set this date 7 days in the past and 30 days into the future. At the time of writing, invoking the API with the same date will override the `value` and `count` properties. Since the `value` will not automatically accumulate, it's expected that the data are pre-aggregated and finalized in the external system every time the API is called.
 
 * `value` is the numerical value representing the metric. In this sample it will be the number of days it took to resolve the cases.
 
